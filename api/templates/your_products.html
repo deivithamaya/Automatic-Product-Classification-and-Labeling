@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Your Products{% endblock %}
+
+{% block content %}
+    <dic class="container" style="width: 100vw;">
+        <h1 style="color: #B0E9EF;">Your products</h1>
+        <div class="no-available" style="width: 50%;
+            height: 50vh;
+            background-color: rgba(217, 217, 217, 0.20); /* Color con 20% de opacidad */
+            display: flex;
+            justify-content: center; /* Centra horizontalmente el contenido */
+            align-items: center;     /* Centra verticalmente el contenido */
+            text-align: center;      /* Centra el texto dentro del contenedor */
+            padding: 20px;  
+            border-radius: 30px;         /* Añade un poco de padding si es necesario */
+            box-sizing: border-box;">
+            <p style="margin: 0;               /* Elimina márgenes predeterminados del párrafo */
+            font-size: 3.2em;        /* Ajusta el tamaño de la fuente según sea necesario */
+            color: #fff;">Feature available with premium plan.</p>
+        </div>
+        <div class="button-container" style="margin: 20px;">
+            <button onclick="window.location.href='{{ url_for('app_router.index') }}'">
+                Go back
+            </button>
+        </div>
+    </dic>
+{% endblock %}

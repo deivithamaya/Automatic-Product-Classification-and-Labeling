@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagen SVG</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <img src="{{ url_for('static', filename='images/anyLogo.svg') }}" alt="SVG Image">
+    <div class="button-container">
+        <button onclick="window.location.href='{{ url_for('app_router.classifier_by_product') }}'">
+            Get started with the AI-powered product classifier.
+        </button>
+        <button onclick="window.location.href='{{ url_for('app_router.classifier_by_list') }}'">
+            Get started with the AI-powered product list classifier
+        </button>
+        <button onclick="window.location.href='{{ url_for('app_router.your_products') }}'">
+            Your Products
+        </button>
+    </div>
+</body>
+</html>

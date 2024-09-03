@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}By Product{% endblock %}
+
+{% block content %}
+    <h1 style="color: #B0E9EF;">Classify new product</h1>
+    <form action="{{ url_for('app_router.submit') }}" method="POST" enctype="multipart/form-data">
+        <div class="form-container">
+            <div class="form-group">
+                <label for="name">Product name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+        </div>
+        <div class="form-container">
+            <div class="form-group">
+                <label for="description">Product description:</label>
+                <input type="text" id="description" name="description" required style="height: 40px;">
+            </div>
+            <div class="form-group">
+                <label for="image">Product image:</label>
+                <input type="file" id="image" name="image" accept="image/*" style="display: none;" required>
+                <button type="button" id="upload-button"
+                    style="width: 100%; background-color: rgba(217, 217, 217, 0.2); height: 100%; border-radius: 5px;
+                    display: flex; align-items: center; justify-content: center;"
+                >
+                <em class="fas fa-upload"
+                    style="width: 80px; height: 100%; text-align: center; align-content: center;"
+                ></em>
+                <span id="file-name">Upload product image</span>
+                </button>
+            </div>
+        </div>
+        <div class="button-container" style="margin-top: 20px; flex-direction: row; width: 100%;">
+            <button onclick="window.location.href='{{ url_for('app_router.index') }}'">
+                Go back
+            </button>
+            <button type="submit">
+                Classify
+            </button>
+        </div>
+        
+    </form>
+    <script>
+        document.getElementById('upload-button').addEventListener('click', function() {
+            document.getElementById('image').click();
+        });
+
+        document.getElementById('image').addEventListener('change', function() {
+            var fileName = document.getElementById('image').files[0].name;
+            document.getElementById('file-name').textContent = fileName;
+        });
+    </script>
+{% endblock %}

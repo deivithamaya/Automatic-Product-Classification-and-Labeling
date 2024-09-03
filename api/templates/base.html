@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="logo-nav-bar" style="width: 20%; text-align: left;">
+                <a href="{{ url_for('app_router.index') }}">
+                    <img src="{{ url_for('static', filename='images/AnyShop.svg') }}" alt="Logo" class="nav-logo" style="margin: 0px;">
+                </a>
+            </li>
+            <li class="{% if request.endpoint == 'classifier_by_product' %}active{% endif %}"><a href="{{ url_for('app_router.classifier_by_product') }}" class="{% if request.endpoint == 'classifier_by_product' %}active{% endif %}">Classifier by product</a></li>
+            <li class="{% if request.endpoint == 'classifier_by_list' %}active{% endif %}"><a href="{{ url_for('app_router.classifier_by_list') }}" class="{% if request.endpoint == 'classifier_by_list' %}active{% endif %}">Classifier by product list</a></li>
+            <li class="{% if request.endpoint == 'your_products' %}active{% endif %}"><a href="{{ url_for('app_router.your_products') }}" class="{% if request.endpoint == 'your_products' %}active{% endif %}">Your products</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

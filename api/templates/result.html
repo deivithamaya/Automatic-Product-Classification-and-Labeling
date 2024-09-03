@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}By Product List{% endblock %}
+
+{% block content %}
+    <dic class="container" style="width: 100vw;">
+        <h1 style="color: #B0E9EF;">Classification result</h1>
+        <div class="container" style="margin-top: 0px; max-height: 35%;">
+            <img src="{{ url_for('app_router.display_image', filename=image_file_name) }}" alt="product_image" class="product-image" style="max-height: 100%; margin-bottom: 0px;">
+        </div>
+        <div class="container" style="flex-direction: column; margin-top: 0px; max-width: 50%;">
+            <p><strong style="color: #B0E9EF;">Product name:</strong> {{ name }}</p>
+            <p><strong style="color: #B0E9EF;">Product description:</strong> {{ description }}</p>
+        </div>
+        <h3 style="color: #B0E9EF;" >Categories</h3>
+        <div class="container" style="flex-direction: row; gap: 15px; margin-top: 0px; max-height: 40px;">
+            <p>{{  categories_str  }}</p>
+        </div>
+        <div class="button-container" style="margin: 20px;">
+            <button onclick="window.location.href='{{ url_for('app_router.index') }}'">
+                Go back
+            </button>
+        </div>
+    </dic>
+{% endblock %}

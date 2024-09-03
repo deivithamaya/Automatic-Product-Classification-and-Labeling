@@ -1,0 +1,26 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+# Node.js
+node_modules/
+# Directorios de producción
+build/
+dist/
+# Archivos de entorno
+.env
+# Archivos temporales
+*.tmp
+*.swp
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv
+
+uploads/
+models_conf/
+categories/
